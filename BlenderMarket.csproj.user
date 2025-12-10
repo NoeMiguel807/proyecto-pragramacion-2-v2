@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Paginas\PaginaCarrito.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Paginas\PaginaCatalogo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Paginas\PaginaInicio.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Ventanas\VentanaLogin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Ventanas\VentanaPago.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Ventanas\VentanaRegistro.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Ventanas\VentanaSubirModelo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

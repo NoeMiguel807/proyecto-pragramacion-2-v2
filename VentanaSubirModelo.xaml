@@ -1,0 +1,193 @@
+﻿<Window x:Class="BlenderMarket.VentanaSubirModelo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Subir Modelo 3D - Blender Market" 
+        Height="906" Width="999"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <!-- Fondo general Blender -->
+        <Grid Background="#F2F2F2">
+            <StackPanel Margin="25" VerticalAlignment="Top">
+
+                <!-- Ícono -->
+                <TextBlock Text="⬆️"
+                           FontSize="40"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,10"/>
+
+                <!-- Título -->
+                <TextBlock Text="SUBIR MODELO 3D"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Foreground="#F5792A"
+                           Margin="0,0,0,25"
+                           HorizontalAlignment="Center"/>
+
+                <!-- NOMBRE -->
+                <TextBlock Text="Nombre del Modelo:"
+                           Margin="0,0,0,5"
+                           Foreground="#2C2C2C"/>
+                <TextBox x:Name="txtNombre"
+                         Height="40"
+                         FontSize="14"
+                         Background="White"
+                         Padding="10"
+                         Margin="0,0,0,15"/>
+
+                <!-- TIPO -->
+                <TextBlock Text="Tipo:"
+                           Margin="0,0,0,5"
+                           Foreground="#2C2C2C"/>
+                <ComboBox x:Name="cmbTipo"
+                          Height="35"
+                          FontSize="14"
+                          Background="White"
+                          Padding="5"
+                          Margin="0,0,0,15">
+                    <ComboBoxItem Content="Humanoide"/>
+                    <ComboBoxItem Content="Animal"/>
+                    <ComboBoxItem Content="Vehiculo"/>
+                    <ComboBoxItem Content="Edificio"/>
+                    <ComboBoxItem Content="Arma"/>
+                    <ComboBoxItem Content="Mueble"/>
+                    <ComboBoxItem Content="Otro"/>
+                </ComboBox>
+
+                <!-- CATEGORÍA -->
+                <TextBlock Text="Categoría:"
+                           Margin="0,0,0,5"
+                           Foreground="#2C2C2C"/>
+                <ComboBox x:Name="cmbCategoria"
+                          Height="35"
+                          FontSize="14"
+                          Background="White"
+                          Padding="5"
+                          Margin="0,0,0,15">
+                    <ComboBoxItem Content="Personajes"/>
+                    <ComboBoxItem Content="Creaturas"/>
+                    <ComboBoxItem Content="Medio Ambiente"/>
+                    <ComboBoxItem Content="Props"/>
+                    <ComboBoxItem Content="Arquitectura"/>
+                    <ComboBoxItem Content="Vehiculos"/>
+                    <ComboBoxItem Content="Herramientas"/>
+                </ComboBox>
+
+                <!-- DESCRIPCIÓN -->
+                <TextBlock Text="Descripción:"
+                           Margin="0,0,0,5"
+                           Foreground="#2C2C2C"/>
+                <TextBox x:Name="txtDescripcion"
+                         Height="80"
+                         FontSize="14"
+                         Background="White"
+                         Padding="10"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"
+                         Margin="0,0,0,15"/>
+
+                <!-- PRECIO -->
+                <TextBlock Text="Precio (Bs.):"
+                           Margin="0,0,0,5"
+                           Foreground="#2C2C2C"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                    <TextBlock Text="Bs."
+                               FontSize="16"
+                               VerticalAlignment="Center"
+                               Margin="0,0,5,0"/>
+                    <TextBox x:Name="txtPrecio"
+                             Height="40"
+                             Width="150"
+                             Background="White"
+                             FontSize="14"
+                             Padding="10"/>
+                </StackPanel>
+
+                <!-- ARCHIVO -->
+                <TextBlock Text="Archivo del Modelo:"
+                           Margin="0,0,0,5"
+                           Foreground="#2C2C2C"/>
+                <Border BorderBrush="#7A7A7A"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Background="White"
+                        Margin="0,0,0,15">
+
+                    <StackPanel Orientation="Horizontal"
+                                Height="40"
+                                VerticalAlignment="Center">
+
+                        <Button x:Name="btnSeleccionarArchivo"
+                                Content="📁 Seleccionar..."
+                                Height="30"
+                                Background="#F5792A"
+                                Foreground="White"
+                                Margin="10,0"
+                                Click="BtnSeleccionarArchivo_Click"/>
+
+                        <TextBlock x:Name="txtNombreArchivo"
+                                   Text="Ningún archivo seleccionado"
+                                   Foreground="#7A7A7A"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- INFO FORMATO -->
+                <TextBlock Text="Formato: .blend, .fbx, .obj, .stl"
+                           FontSize="11"
+                           Foreground="#7A7A7A"
+                           Margin="0,0,0,25"/>
+
+                <!-- VISTA PREVIA -->
+                <Border Background="#E6E6E6"
+                        Height="80"
+                        CornerRadius="5"
+                        Margin="0,0,0,25">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="🎨" FontSize="30"/>
+                        <TextBlock Text="Vista previa del modelo"
+                                   FontSize="12"
+                                   Foreground="#7A7A7A"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- ERROR -->
+                <Border x:Name="borderError"
+                        Background="#FAD4A3"
+                        Padding="10"
+                        Margin="0,0,0,20"
+                        CornerRadius="5"
+                        Visibility="Collapsed">
+                    <TextBlock x:Name="txtMensajeError"
+                               Foreground="#C0392B"
+                               TextWrapping="Wrap"/>
+                </Border>
+
+                <!-- BOTÓN SUBIR -->
+                <Button x:Name="btnSubir"
+                        Content="⬆️ SUBIR MODELO"
+                        Height="45"
+                        FontSize="16"
+                        Background="#F5792A"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Click="BtnSubir_Click"/>
+
+                <!-- BOTÓN CANCELAR -->
+                <Button x:Name="btnCancelar"
+                        Content="CANCELAR"
+                        Height="40"
+                        FontSize="16"
+                        Background="#7A7A7A"
+                        Foreground="White"
+                        Margin="0,10,0,0"
+                        Click="BtnCancelar_Click"/>
+
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
